@@ -1,6 +1,6 @@
-# Custom tools render their templates with strict Liquid at call time, so a syntax error, an
-# undeclared variable or an unknown filter makes every call fail. This test-renders a template
-# the same way, with a stand-in for each variable the tool will provide, to catch those upfront.
+# Custom tools fail on a Liquid syntax error at call time, but render an undeclared variable or an
+# unknown filter as blank, which would quietly send wrong requests. This test-renders a template with
+# strict variables and filters, with a stand-in for each variable the tool will provide, to catch those upfront.
 #
 # This is deliberately not comprehensive: branches the test render does not take (else, unless)
 # go unchecked. It catches the common mistakes, which is good enough; runtime errors surface the rest.
