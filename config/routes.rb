@@ -106,6 +106,7 @@ Rails.application.routes.draw do
               post :test, on: :collection
             end
             resource :tools_manifest, only: [] do
+              get :installed
               post :preview
               post :install
             end
